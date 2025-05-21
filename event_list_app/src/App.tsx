@@ -1,10 +1,13 @@
 import "./App.css";
+import EventList from "./components/EventList";
 
 function App() {
   return (
     <>
-      <div className="bg-amber-300 border border-blue-500 text-3xl text-center">
-        Hello World!
+      <div className="bg-blue-100">
+        <div className="container mx-auto py-20">
+          <EventList />
+        </div>
       </div>
     </>
   );
