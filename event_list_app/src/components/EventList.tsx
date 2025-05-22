@@ -47,6 +47,10 @@ type QuantitativeValue = {
 type Place = {
   "@id": string;
   "@type": string[];
+  address: {
+    "@type": string;
+    addressLocality: string;
+  };
 };
 
 type Organization = {
@@ -65,7 +69,7 @@ const EventList = () => {
 
   useEffect(() => {
     fetch(
-      "https://data.carinthia.com/api/v4/endpoints/557ea81f-6d65-6476-9e01-d196112514d2?include=image&token=9962098a5f6c6ae8d16ad5aba95afee0"
+      "https://data.carinthia.com/api/v4/endpoints/557ea81f-6d65-6476-9e01-d196112514d2?include=image,location&token=9962098a5f6c6ae8d16ad5aba95afee0"
     )
       .then((response) => {
         if (!response.ok) {
@@ -84,7 +88,7 @@ const EventList = () => {
   if (loading) return <p>Lade Eventsss...</p>;
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
       {events.map((event, i) => (
         <EventCard
           key={i}
@@ -93,6 +97,7 @@ const EventList = () => {
           endDate={event.endDate}
           description={event.description}
           image={event.image}
+          location={event.location}
         />
       ))}
     </div>
