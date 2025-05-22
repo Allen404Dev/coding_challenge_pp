@@ -1,11 +1,16 @@
-import detailIcon from "../assets/arrow-right-up-svgrepo-com.svg";
+import { Link } from "react-router-dom";
 
-const DetailButton = () => {
+type Props = {
+  eventId: string;
+};
+
+const DetailButton = ({ eventId }: Props) => {
   return (
-    <button className=" bg-[#42a5f5] w-fit py-2 px-4 rounded-full uppercase font-semibold flex flex-row items-center gap-2 hover:bg-blue-500 transition-all duration-300 ">
-      <img src={detailIcon} className="w-8" />
-      Mehr
-    </button>
+    <Link to={`/event/${eventId}`}>
+      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+        Details ansehen
+      </button>
+    </Link>
   );
 };
 
