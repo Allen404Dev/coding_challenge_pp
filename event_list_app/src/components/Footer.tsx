@@ -2,7 +2,7 @@ import logo from "../assets/logo_eventX_transparent.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 border-t border-blue-400 text-white">
+    <footer className="bg-slate-900 border-t border-blue-400 text-white z-50">
       <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
         <div>
           <img src={logo} alt="Logo" className="h-20" />

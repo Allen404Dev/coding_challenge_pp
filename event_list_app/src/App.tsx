@@ -8,11 +8,12 @@ function App() {
     <>
       <Menu />
       <div className="bg-[#0f172a]">
-        <div className="container mx-auto py-50">
+        <div className="container mx-auto pt-24 pb-24">
           <EventList />
         </div>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

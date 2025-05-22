@@ -3,54 +3,7 @@ import parse from "html-react-parser";
 import calenderIcon from "../assets/calendar-alt-svgrepo-com.svg";
 import clockIcon from "../assets/time-filled-svgrepo-com.svg";
 import locationIcon from "../assets/location-pin-svgrepo-com.svg";
-
-type ImageObject = {
-  "@id": string;
-  "@type": string[];
-  name?: string;
-  caption?: string;
-  description?: string;
-  "dc:originalUrl"?: string;
-  thumbnailUrl?: string;
-  contentUrl?: string;
-  width?: QuantitativeValue;
-  height?: QuantitativeValue;
-  contentSize?: number;
-  fileFormat?: string;
-  uploadDate?: string;
-  author?: Person[];
-  copyrightHolder?: Person[];
-  "dc:slug"?: string;
-};
-
-type QuantitativeValue = {
-  "@type": string;
-  identifier?: string;
-  name?: string;
-  unitCode?: string;
-  unitText?: string;
-  "@id"?: string;
-  value?: number;
-};
-
-type Place = {
-  "@id": string;
-  "@type": string[];
-  address: {
-    "@type": string;
-    addressLocality: string;
-  };
-};
-
-type Organization = {
-  "@id": string;
-  "@type": string[];
-};
-
-type Person = {
-  "@id": string;
-  "@type": string[];
-};
+import { ImageObject, Place } from "../types/types";
 
 type Props = {
   name: string;
@@ -64,7 +17,6 @@ type Props = {
 const EventCard = ({
   name,
   startDate,
-  endDate,
   description,
   image,
   location,
