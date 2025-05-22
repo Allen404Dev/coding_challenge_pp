@@ -28,8 +28,6 @@ const EventList = ({ searchText }: Props) => {
         return response.json();
       })
       .then((data) => {
-        console.log("data", data?.links?.next);
-
         setNextPage(data?.links?.next || "");
 
         setEvents(data["@graph"]);

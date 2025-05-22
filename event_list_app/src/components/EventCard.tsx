@@ -42,18 +42,19 @@ const EventCard = ({ event }: Props) => {
             <img src={clockIcon} className="w-8" />
             {startTimeFormatted}
           </div>
-          <div className="flex flex-row items-center gap-2">
-            <img src={locationIcon} className="w-8" />
-            {event.location?.[0]?.address?.addressLocality}
-          </div>
+          {event.location?.[0]?.address?.addressLocality && (
+            <div className="flex flex-row items-center gap-2">
+              <img src={locationIcon} className="w-8" />
+              {event.location?.[0]?.address?.addressLocality}{" "}
+            </div>
+          )}
         </div>
 
         <div className="text-gray-700 line-clamp-3">
           {parse(event.description ?? "")}
         </div>
-        <div className="">
-          <DetailButton eventId={event.name} />
-        </div>
+
+        <DetailButton eventId={event.name} />
       </div>
     </div>
   );
