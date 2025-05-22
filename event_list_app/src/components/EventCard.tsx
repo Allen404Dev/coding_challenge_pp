@@ -10,8 +10,6 @@ type Props = {
 };
 
 const EventCard = ({ event }: Props) => {
-  console.log("location:", event.location?.[0]?.address?.addressLocality);
-
   const startDateFormatted = new Date(event.startDate).toLocaleString("de-AT", {
     day: "2-digit",
     month: "2-digit",
@@ -33,9 +31,9 @@ const EventCard = ({ event }: Props) => {
         />
       </div>
 
-      <div className="p-4 flex flex-col justify-between min-h-[350px] gap-4">
+      <div className="p-4 flex flex-col justify-between gap-4 min-h-[350px] h-fit">
         <h2 className="text-2xl font-semibold">{event.name}</h2>
-        <div className="flex flex-row gap-8 justify-between">
+        <div className="flex flex-col xl:flex-row gap-8 justify-between">
           <div className="flex flex-row items-center gap-2">
             <img src={calenderIcon} className="w-8" />
             {startDateFormatted}
@@ -53,7 +51,7 @@ const EventCard = ({ event }: Props) => {
         <div className="text-gray-700 line-clamp-3">
           {parse(event.description ?? "")}
         </div>
-        <div>
+        <div className="">
           <DetailButton eventId={event.name} />
         </div>
       </div>
