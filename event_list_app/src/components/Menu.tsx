@@ -11,7 +11,7 @@ const Menu = () => {
   return (
     <header className=" text-white shadow-md fixed top-0 left-0 w-full border-b-[1px] border-blue-400 z-50 backdrop-blur-md bg-[#0f172a]/80">
       <div className="container mx-auto flex items-center justify-end relative h-20">
-        <Link to="/" className="absolute top-[30px] left-0">
+        <Link to="/coding_challenge_pp/" className="absolute top-[30px] left-0">
           <img src={logoIconX} alt="Logo" className="h-20" />
         </Link>
 

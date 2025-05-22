@@ -16,7 +16,7 @@ function App() {
       <Menu />
       <div className="bg-[#0f172a] min-h-screen">
         <div className="container mx-auto pt-30 pb-4 p-2">
-          {location.pathname === "/" && (
+          {location.pathname === "/coding_challenge_pp/" && (
             <div className="container mx-auto pt-30 pb-4 p-2">
               <SearchBar
                 searchText={searchText}
@@ -27,7 +27,10 @@ function App() {
         </div>
         <div className="container mx-auto pt-10 pb-24">
           <Routes>
-            <Route path="/" element={<EventList searchText={searchText} />} />
+            <Route
+              path="/coding_challenge_pp/"
+              element={<EventList searchText={searchText} />}
+            />
             <Route path="/event/:id" element={<EventDetail />} />
           </Routes>
         </div>

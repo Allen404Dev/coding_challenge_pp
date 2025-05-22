@@ -1,4 +1,4 @@
-import { ArrowDownIcon, Loader, Loader2 } from "lucide-react";
+import { ArrowDownIcon, Loader2 } from "lucide-react";
 
 type Props = {
   isLoading: boolean;
